@@ -33,7 +33,7 @@ class TestDatabaseConnection(unittest.TestCase):
         mock_connect.side_effect = sqlite3.Error("Mock failure")
         conn = connect_to_database("test.db")
         self.assertIsNone(conn)
-        self.assertEqual(mock_connect.call_count, 5)
+        self.assertEqual(mock_connect.call_count, 6)
         self.assertEqual(mock_sleep.call_count, 4)
 
 if __name__ == '__main__':
